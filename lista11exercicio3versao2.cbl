@@ -154,7 +154,7 @@
        *>          consultar cadastro
                    when = "con"
                      or = "CON"
-                       perform conultar-cadastro
+                       perform consultar-cadastro
 
        *>          deletar cadastro de algum aluno
                    when = "del"
@@ -291,7 +291,7 @@
       *>-----------------------------------------------------------
       *> Concultar cadastro de Aluno
       *>-----------------------------------------------------------
-       conultar-cadastro section.
+       consultar-cadastro section.
 
            perform until ws-fechar-programa
 
@@ -337,7 +337,7 @@
            end-perform
 
            .
-       conultar-cadastro-exit.
+       consultar-cadastro-exit.
            exit.
 
       *>-----------------------------------------------------------
@@ -374,6 +374,8 @@
       *> Alterar Aluno
       *>-----------------------------------------------------------
        alterar-aluno section.
+
+               perform consultar-cadastro
 
        *> ------------- Altera Cadastro ------------------
                display " "
